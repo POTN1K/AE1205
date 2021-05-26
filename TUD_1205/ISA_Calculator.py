@@ -127,3 +127,4 @@ print("At an altitude ", h1, ", the values given by the ISA are:\nPressure-", ro
       "\nTemperature-", round(t, 1))
 # ---------------------------------------------------------------------------------------------
 dummy = input('Press enter to leave the ISA calculator')
+print("Trial")
