@@ -179,7 +179,7 @@ pg.display.set_caption("Cow-tapult")
 # Files
 background = pg.image.load("Data/Cowtapult/background.jpg")
 arthurandmen = pg.image.load("Data/Cowtapult/arthurandmen.png")
-cow = pg.image.load("Data/Cowtapult/cow.png")
+cow = pg.image.load("./Data/Cowtapult/cow.png")
 
 # Window
 x_max = 1000
