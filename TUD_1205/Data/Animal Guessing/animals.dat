@@ -1,0 +1,11 @@
+0 -- Is it a mammal? -- 1 -- 2
+1 -- Does it bark? -- Dog -- 4
+2 -- Is it a fish? -- Shark -- 3
+3 -- Is it an insect? -- 5 -- 7
+4 -- Does it have whiskers? -- 6 -- 8
+5 -- Does it produce honey? -- Bee -- Butterfly
+6 -- Does it have stripes? -- Tiger -- Cat
+7 -- Is it a reptile? -- Lizard -- 10
+8 -- Does it have a trunk? -- Elephant -- 9
+9 -- Does it have a long neck? -- Giraffe -- Monkey
+10 -- Is it a bird? -- Parrot -- Spider
