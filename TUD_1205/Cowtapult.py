@@ -5,7 +5,7 @@ import pygame as pg
 import pygame.time
 
 
-def catapult(R=10, l_0=0.5, theta_stop=math.pi / 3, theta_start=0.0, k_elastic=9000, m_cow=550):
+def catapult(R=10.0, l_0=0.5, theta_stop=math.pi / 3, theta_start=0.0, k_elastic=9000, m_cow=550):
     # ------------------------------------------------------
     # Library
     import matplotlib.pyplot as plt
@@ -55,7 +55,7 @@ def catapult(R=10, l_0=0.5, theta_stop=math.pi / 3, theta_start=0.0, k_elastic=9
         l_elastic = math.sqrt(math.pow(lx, 2) + math.pow(ly, 2))
 
         # Angles
-        beta = math.pi - theta
+        beta = math.pi/2 - theta
         phi = math.atan(ly / lx)
 
         # Forces
@@ -65,7 +65,6 @@ def catapult(R=10, l_0=0.5, theta_stop=math.pi / 3, theta_start=0.0, k_elastic=9
             Fe = k_elastic * (l_elastic - l_0)
 
         Ft = Fe * math.sin(phi + theta) - Fg * math.sin(beta)
-        Fn = Fe * math.cos(phi + theta) + Fg * math.cos(beta)
 
         # Acceleration
         at = Ft / m_cow
@@ -151,7 +150,7 @@ def catapult(R=10, l_0=0.5, theta_stop=math.pi / 3, theta_start=0.0, k_elastic=9
     # plt.title("y Velocity")
     # plt.show()
 
-    """plt.subplot(321)
+    plt.subplot(321)
     plt.plot(t2_list, vx_list)
     plt.title("x Velocity")
     plt.subplot(322)
@@ -160,7 +159,7 @@ def catapult(R=10, l_0=0.5, theta_stop=math.pi / 3, theta_start=0.0, k_elastic=9
     plt.subplot(323)
     plt.plot(x_list, y_list)
     plt.title("x vs y")
-    plt.show()"""
+    plt.show()
 
     # print(x_list[-1])
     return t2_list, y_list, x_list
@@ -189,11 +188,10 @@ scr = pg.display.set_mode(reso)
 scrrect = scr.get_rect()
 
 # Background
-scr.fill((0,0,0))
+scr.fill((0, 0, 0))
 back_img = pg.transform.scale(background, reso)
 back_img = pg.transform.flip(back_img, True, False)
 scr.blit(back_img, (0, 0))
-
 
 # Cow
 cowimg = pg.transform.scale(cow, (50, 50))
@@ -203,6 +201,13 @@ y_cow = 120
 cowrect.centerx = x_cow
 cowrect.centery = y_cow
 scr.blit(cowimg, cowrect)
+
+# Arthur
+arthurimg = pg.transform.scale(arthurandmen, (120, 90))
+arthurrect = arthurimg.get_rect()
+arthurrect.center = (800, 460)
+scr.blit(arthurimg, arthurrect)
+
 pg.display.flip()
 
 # Variables
@@ -210,7 +215,6 @@ angle = math.pi / 3
 
 # Text
 font = pygame.font.Font('freesansbold.ttf', 50)
-
 
 # Running
 running = True
@@ -224,7 +228,7 @@ while running:
     if keys[pg.K_LEFT]:
         if angle >= 0:
             angle -= 0.0005
-            angle_ = round(angle*180/math.pi, 1)
+            angle_ = round(angle * 180 / math.pi, 1)
 
             text = font.render(f"{str(angle_)}°", True, (255, 0, 0))
             textRect = text.get_rect()
@@ -233,7 +237,7 @@ while running:
             scr.blit(back_img, (0, 0))
             scr.blit(cowimg, cowrect)
             scr.blit(text, textRect)
-
+            scr.blit(arthurimg, arthurrect)
             pg.display.flip()
     if keys[pg.K_RIGHT]:
         t3, y3, x3 = catapult(theta_start=angle)
@@ -241,18 +245,32 @@ while running:
             if keys[pg.K_ESCAPE]:
                 running = False
             # Change x
-            x_cow = int(i*x_max/500)+300
+            x_cow = int(i * x_max / 500) + 300
             # Change y
-            y_cow = y_max-int(j*y_max/100)-120
+            y_cow = y_max - int(j * y_max / 100) - 120
 
             cowrect.centery = y_cow
             cowrect.centerx = x_cow
 
             scr.blit(back_img, (0, 0))
+            scr.blit(arthurimg, arthurrect)
             scr.blit(cowimg, cowrect)
+
             pygame.display.flip()
             pg.time.delay(2)
 
+        if 750 < x_cow < 850:
+            win = font.render(f"You defeated Arthur!!", True, (255, 0, 0))
+            winRect = win.get_rect()
+            winRect.center = (300, 400)
+
+            scr.blit(back_img, (0, 0))
+            scr.blit(win, winRect)
+            scr.blit(arthurimg, arthurrect)
+            scr.blit(cowimg, cowrect)
+
+            pygame.display.flip()
+        pg.time.delay(2000)
         running = False
 
 pg.quit()
