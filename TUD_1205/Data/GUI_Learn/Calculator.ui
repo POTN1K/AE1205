@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SuperCalculator</class>
+ <widget class="QDialog" name="SuperCalculator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>523</width>
+    <height>292</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Super Calcul ator</string>
+  </property>
+  <widget class="QPushButton" name="Equal">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>40</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>=</string>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="Input1">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>40</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>3</number>
+   </property>
+   <property name="maximum">
+    <double>999.990000000000009</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="Input2">
+   <property name="geometry">
+    <rect>
+     <x>251</x>
+     <y>40</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>3</number>
+   </property>
+   <property name="maximum">
+    <double>999.990000000000009</double>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="Operator">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>40</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>*</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>/</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="Result">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>110</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Compute!</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
