@@ -116,11 +116,11 @@ board = np.zeros((size, size))
 if pos == '1':
     positions = Read106(file1)
     board = InsertPattern(board, positions)
-if pos == '2':
-    positions = Read106(file1)
+elif pos == '2':
+    positions = Read106(file2)
     board = InsertPattern(board, positions)
-if pos == '3':
-    positions = Read106(file1)
+elif pos == '3':
+    positions = Read106(file3)
     board = InsertPattern(board, positions)
 else:
     board = InsertPattern(board)
