@@ -98,13 +98,14 @@ def InsertPattern(board_, table=[]):
             x = x_center + value[0]
             y = y_center + value[1]
             board_[x, y] = 1
-        return board_
+    return board_
 
 
 # ------------------------------------------------------
 # Program
 # Fill values
 size = 50
+pos = input("Which file do you want to see? (1,2,3)")
 file1 = './Data/Game_of_Life/ak47reaction_106.lif'
 file2 = './Data/Game_of_Life/b52bomber_106.lif'
 file3 = './Data/Game_of_Life/barge2spaceship_106.lif'
@@ -112,9 +113,17 @@ file3 = './Data/Game_of_Life/barge2spaceship_106.lif'
 # Initializing board
 board = np.zeros((size, size))
 # Setting initial positions
-if file1 or file2 or file3:
-    positions = Read106(file3)
-board = InsertPattern(board, positions)
+if pos == '1':
+    positions = Read106(file1)
+    board = InsertPattern(board, positions)
+if pos == '2':
+    positions = Read106(file1)
+    board = InsertPattern(board, positions)
+if pos == '3':
+    positions = Read106(file1)
+    board = InsertPattern(board, positions)
+else:
+    board = InsertPattern(board)
 
 # ------------------------------------------------------
 # Pygame
