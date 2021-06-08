@@ -86,6 +86,7 @@ def Read106(file):
 
 
 def InsertPattern(board_, table=[]):
+    """A pattern is inserted in a blank board. If not pattern is given, use standard."""
     if not table:
         board_[1:4, 1:4] = [[0, 1, 0],
                             [0, 0, 1],
@@ -104,7 +105,7 @@ def InsertPattern(board_, table=[]):
 # ------------------------------------------------------
 # Program
 # Fill values
-size = 50
+size = 15
 pos = input("Which file do you want to see? (1,2,3)")
 file1 = './Data/Game_of_Life/ak47reaction_106.lif'
 file2 = './Data/Game_of_Life/b52bomber_106.lif'
