@@ -1,3 +1,15 @@
 ./TUD_1205/Tests.py
 ./TUD_1205/.idea
 ./TUD_1205/__pycache__
+TUD_1205/.gitignore
+TUD_1205/Tests.py
+TUD_1205/.idea/.gitignore
+TUD_1205/.idea/.name
+TUD_1205/.idea/misc.xml
+TUD_1205/.idea/modules.xml
+TUD_1205/.idea/other.xml
+TUD_1205/.idea/TUD_1205.iml
+TUD_1205/.idea/vcs.xml
+TUD_1205/.idea/inspectionProfiles/profiles_settings.xml
+TUD_1205/__pycache__/Animal_Guessing.cpython-37.pyc
+AE1205 Programming and Scientific Computing in PYTHON - 2020.pdf
